@@ -4,7 +4,7 @@ export const styles = StyleSheet.create(theme => ({
   container: {
     width: "100%",
     backgroundColor: theme.colors["gray/100"],
-    borderRadius: theme.radius.md,
+    borderRadius: 8,
     overflow: "hidden",
     variants: {
       size: {
@@ -23,6 +23,6 @@ export const styles = StyleSheet.create(theme => ({
   progress: {
     height: "100%",
     backgroundColor: "red",
-    borderRadius: theme.radius.md,
+    borderRadius: 8,
   },
 }));

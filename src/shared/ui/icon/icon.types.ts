@@ -1,9 +1,9 @@
-import { UIColorsType, UIFontSizeType } from "../ui.config";
+import { UIColorsType } from "../ui.config";
 import { Icons } from "./icon.config";
 
 export type IconProps = {
   name: keyof typeof Icons;
-  size?: UIFontSizeType;
+  size?: number;
   color?: UIColorsType;
 };
 

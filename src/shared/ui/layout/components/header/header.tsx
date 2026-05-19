@@ -33,7 +33,7 @@ export const LayoutHeader = ((props: LayoutHeaderProps) => {
             <Flex gap={8} align="center" style={[styles.container, props.style]} {...props}>
               <Flex gap={2} align="center" style={styles.leftContent}>
                 <TouchableHighlight style={styles.backButton} onPress={goBack} underlayColor={theme.colors["gray/200"]}>
-                  <Icon name="left-line" size="xl" />
+                  <Icon name="left-line" size={24} />
                 </TouchableHighlight>
                 {slots.title}
               </Flex>

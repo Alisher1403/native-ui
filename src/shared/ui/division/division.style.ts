@@ -14,7 +14,7 @@ export const styles = StyleSheet.create(theme => ({
     paddingTop: props.pt,
     paddingBottom: props.pb,
     borderRadius: props.rounded,
-    backgroundColor: props.bg && theme.alpha(theme.colors[props.bg], props.bgAlpha),
+    backgroundColor: props.bg && theme.alpha(props.bg, props.bgAlpha),
     flex: props.flex ? 1 : undefined,
     flexShrink: props.flexShrink ? 1 : undefined,
   }),

@@ -2,18 +2,18 @@ import { StyleSheet } from "react-native-unistyles";
 
 export const styles = StyleSheet.create((theme, rt) => ({
   container: {
-    padding: theme.spacing.md,
-    paddingVertical: theme.spacing.md,
-    paddingTop: theme.spacing.md + rt.insets.top,
-    paddingRight: theme.spacing.xl,
+    padding: 8,
+    paddingVertical: 8,
+    paddingTop: 8 + rt.insets.top,
+    paddingRight: 16,
   },
   leftContent: {
     flexDirection: "row",
     alignItems: "center",
-    gap: theme.spacing.sm,
+    gap: 4,
   },
   backButton: {
-    padding: theme.spacing.md,
+    padding: 8,
     borderRadius: 100,
   },
 }));

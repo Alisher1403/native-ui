@@ -5,7 +5,7 @@ export const styles = StyleSheet.create(theme => ({
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: theme.colors["gray/100"],
-    borderRadius: theme.radius.xl,
+    borderRadius: 16,
     borderWidth: theme.size(1),
     borderColor: "transparent",
     height: theme.size(48),
@@ -23,22 +23,22 @@ export const styles = StyleSheet.create(theme => ({
     },
   },
   prefixText: {
-    paddingLeft: theme.spacing.lg,
+    paddingLeft: 12,
     variants: {
       prefixText: {
         true: {
-          paddingRight: theme.spacing.sm,
+          paddingRight: 4,
         },
       },
     },
   },
   suffixText: {
-    paddingRight: theme.spacing.lg,
-    paddingLeft: theme.spacing.sm,
+    paddingRight: 12,
+    paddingLeft: 4,
   },
   input: {
     flex: 1,
-    paddingHorizontal: theme.spacing.lg,
+    paddingHorizontal: 12,
     color: theme.colors["main/label"],
     fontFamily: theme.fontFamily.Inter_500,
     fontSize: theme.size(15),

@@ -13,7 +13,7 @@ function BadgeText(props: BadgeTextProps) {
 
   return (
     <Division bg={badgeColor} bgAlpha={0.1} {...props} style={[styles.container, props.style]}>
-      {props.icon ? <Icon name={props.icon} color={badgeColor} size="md" /> : undefined}
+      {props.icon ? <Icon name={props.icon} color={badgeColor} size={16} /> : undefined}
       <Typography name="footnote/medium" color={badgeColor} numberOfLines={props.numberOfLines}>
         {props.children}
       </Typography>

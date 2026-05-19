@@ -110,7 +110,7 @@ export function OptionSheet(props: OptionSheetProps) {
               </Flex>
               <Division>
                 {isActive ? (
-                  <Icon name="check-line" size="xl" color="main/primary" />
+                  <Icon name="check-line" size={24} color="main/primary" />
                 ) : undefined}
               </Division>
             </TouchableOpacity>

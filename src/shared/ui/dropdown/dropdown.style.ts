@@ -9,12 +9,12 @@ export const styles = StyleSheet.create(theme => ({
     transformOrigin: "right top",
     borderWidth: theme.size(1),
     borderColor: theme.colors["gray/200"],
-    borderRadius: theme.radius.xxl,
+    borderRadius: 20,
     overflow: "hidden",
   },
   root: {
-    padding: theme.spacing.sm,
+    padding: 4,
     backgroundColor: theme.colors["system/white"],
-    borderRadius: theme.radius.xxl,
+    borderRadius: 20,
   },
 }));

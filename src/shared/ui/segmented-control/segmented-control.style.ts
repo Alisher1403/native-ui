@@ -4,15 +4,15 @@ export const styles = StyleSheet.create(theme => ({
   container: {
     flexDirection: "row",
     backgroundColor: theme.colors["gray/100"],
-    borderRadius: theme.radius.xl,
-    padding: theme.spacing.xs,
+    borderRadius: 16,
+    padding: 2,
   },
   segment: {
     flex: 1,
-    padding: theme.spacing.lg,
+    padding: 12,
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: theme.radius.xl - 2,
+    borderRadius: 14,
   },
   segmentActive: {
     backgroundColor: theme.colors["system/white"],

@@ -18,7 +18,7 @@ export function ProgressCircle(props: ProgressCircleProps) {
   const cy = size / 2;
   const circumference = 2 * Math.PI * radius;
 
-  const trackColor = theme.alpha(theme.colors[props.trackColor || "main/label"], 0.1);
+  const trackColor = theme.alpha(props.trackColor || "main/label", 0.1);
   const progressColor = theme.colors[props.progressColor || "main/label"];
 
   const animatedProps = useAnimatedProps(() => {

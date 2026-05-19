@@ -3,7 +3,7 @@
 Import components from:
 
 ```tsx
-import { Badge, Division, Flex, Icon, Input, Layout, Select } from "@src/shared/ui";
+import { Badge, Button, Division, Flex, Icon, Input, Layout, Select } from "@src/shared/ui";
 ```
 
 ## Layout
@@ -35,10 +35,10 @@ Use `Layout` as the screen wrapper. It provides ready-to-use header, content, fo
 Use `Icon` to render any registered icon from `icon.config.ts`.
 
 ```tsx
-<Icon name="search-line" size="xl" color="main/primary" />
+<Icon name="search-line" size={24} color="main/primary" />
 ```
 
-Common props: `name`, `size`, `color`.
+Common props: `name`, `size`, `color`. `size` is numeric.
 
 ## Select
 
@@ -76,6 +76,18 @@ Use `Input` for text and masked values such as phone, card, or numeric input.
 ```
 
 Supported `type` values include: `default`, `phone`, `number`, `float`, `uzs-tiyin`, `card-pan`, `card-expiry`, `year`, `passport-number`, `passport-series`.
+
+## Button
+
+Use `Button` for primary actions, optional icons, and loading/disabled states.
+
+```tsx
+<Button type="primary" size="medium" icon="send-fill" onPress={handleSubmit}>
+  Continue
+</Button>
+```
+
+Common props: `type`, `size`, `icon`, `loading`, `disabled`, `onPress`, `fullWidth`.
 
 ## Flex
 

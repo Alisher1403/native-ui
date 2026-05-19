@@ -28,7 +28,7 @@ export function SelectHeader(props: SelectHeaderProps) {
               </Typography>
             </Flex>
             <TouchableOpacity onPress={onClear}>
-              <Icon name="close-line" size="xl" color="main/label-secondary" />
+              <Icon name="close-line" size={24} color="main/label-secondary" />
             </TouchableOpacity>
           </Flex>
         ) : (
@@ -37,7 +37,7 @@ export function SelectHeader(props: SelectHeaderProps) {
               {placeholder || " "}
             </Typography>
             <View>
-              <Icon name="down-line" size="xl" color="main/label-secondary" />
+              <Icon name="down-line" size={24} color="main/label-secondary" />
             </View>
           </Flex>
         )}

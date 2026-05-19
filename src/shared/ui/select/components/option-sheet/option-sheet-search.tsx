@@ -19,7 +19,7 @@ function OptionSheetSearch({ search, setSearch }: OptionSheetSearchProps) {
     <View style={styles.searchShell}>
       <View style={[styles.searchContainer, { backgroundColor: theme.colors["system/white"] }]}>
         <View style={styles.searchRow}>
-          <Icon name="search-line" size="lg" color="main/label-secondary" />
+          <Icon name="search-line" size={20} color="main/label-secondary" />
           <BottomSheetTextInput
             value={search}
             onChangeText={setSearch}

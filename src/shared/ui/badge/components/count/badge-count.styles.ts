@@ -8,7 +8,7 @@ export const styles = StyleSheet.create(theme => ({
     position: "absolute",
     top: theme.size(-8),
     right: theme.size(-8),
-    borderRadius: theme.radius.full,
+    borderRadius: 9999,
     paddingHorizontal: theme.size(3),
     paddingVertical: theme.size(2),
     zIndex: 10,

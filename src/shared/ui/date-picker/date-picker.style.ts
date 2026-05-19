@@ -2,16 +2,16 @@ import { StyleSheet } from "react-native-unistyles";
 
 export const styles = StyleSheet.create(theme => ({
   header: {
-    padding: theme.spacing.md,
-    paddingHorizontal: theme.spacing.lg,
-    borderRadius: theme.radius.xl,
+    padding: 8,
+    paddingHorizontal: 12,
+    borderRadius: 16,
     backgroundColor: theme.colors["gray/100"],
     borderWidth: 1,
     borderColor: theme.colors.transparent,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    gap: theme.spacing.sm + 4,
+    gap: 8,
     variants: {
       error: {
         true: {
@@ -34,7 +34,7 @@ export const styles = StyleSheet.create(theme => ({
     color: theme.colors["main/label-secondary"],
   },
   clearButton: {
-    padding: theme.spacing.xs,
+    padding: 2,
     variants: {
       disabled: {
         true: {

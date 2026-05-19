@@ -23,7 +23,7 @@ function StarRating(props: StarRatingProps) {
           const isActive = index < value;
           return (
             <Pressable key={index} onPress={() => onChange(index + 1)}>
-              <Icon name="star-fill" size="xxxl" color={isActive ? "main/warning" : "gray/200"} />
+              <Icon name="star-fill" size={32} color={isActive ? "main/warning" : "gray/200"} />
             </Pressable>
           );
         })}

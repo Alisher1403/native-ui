@@ -13,7 +13,7 @@ export const styles = StyleSheet.create(theme => ({
   row: {
     flexDirection: "row",
     alignItems: "center",
-    gap: theme.spacing.lg,
+    gap: 12,
     justifyContent: "space-between",
   },
   label: {
@@ -25,14 +25,14 @@ export const styles = StyleSheet.create(theme => ({
   switch: {
     width: theme.size(SWITCH_WIDTH),
     height: theme.size(SWITCH_HEIGHT),
-    borderRadius: theme.radius.full,
+    borderRadius: 9999,
     padding: theme.size(SWITCH_PADDING),
     justifyContent: "center",
   },
   thumb: {
     width: theme.size(SWITCH_THUMB_SIZE),
     height: theme.size(SWITCH_THUMB_SIZE),
-    borderRadius: theme.radius.full,
+    borderRadius: 9999,
     backgroundColor: theme.colors["system/white"],
     shadowColor: theme.colors["system/black"],
     shadowOpacity: 0.12,

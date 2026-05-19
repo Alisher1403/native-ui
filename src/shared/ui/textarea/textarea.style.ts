@@ -3,11 +3,11 @@ import { StyleSheet } from "react-native-unistyles";
 export const styles = StyleSheet.create(theme => ({
   container: {},
   input: {
-    paddingVertical: theme.spacing.md,
-    paddingHorizontal: theme.spacing.lg,
+    paddingVertical: 8,
+    paddingHorizontal: 12,
     color: theme.colors["main/label"],
     backgroundColor: theme.colors["gray/100"],
-    borderRadius: theme.radius.xl,
+    borderRadius: 16,
     minHeight: theme.size(120),
     borderWidth: 1,
     borderColor: "transparent",

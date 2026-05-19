@@ -14,7 +14,7 @@ function Checkbox(props: CheckboxProps) {
 
   return (
     <Pressable style={[themed.row, style]} onPress={handlePress} disabled={disabled}>
-      <View style={themed.box}>{value && <Icon name="check-line" size="sm" color="system/white" />}</View>
+      <View style={themed.box}>{value && <Icon name="check-line" size={12} color="system/white" />}</View>
       <Typography name="callout/regular" color="main/label" flex>
         {label}
       </Typography>

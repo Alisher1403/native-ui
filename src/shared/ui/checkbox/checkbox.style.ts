@@ -6,14 +6,14 @@ export const styles = StyleSheet.create(theme => ({
   row: {
     flexDirection: "row",
     alignItems: "center",
-    gap: theme.spacing.md,
+    gap: 8,
   },
   box: {
     width: theme.size(22),
     height: theme.size(22),
     borderWidth: theme.size(2),
     borderColor: theme.colors["gray/500"],
-    borderRadius: theme.radius.md,
+    borderRadius: 8,
     justifyContent: "center",
     alignItems: "center",
   },

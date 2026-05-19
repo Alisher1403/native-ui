@@ -24,7 +24,7 @@ export function DefaultItem(props: DefaultItemProps) {
           <Flex align="center" gap={12} flexShrink>
             {props.icon ? (
               <Division p={12} bg="gray/100" rounded={9999}>
-                <Icon name={props.icon} size="xl" color="main/label" />
+                <Icon name={props.icon} size={24} color="main/label" />
               </Division>
             ) : undefined}
             <Division flexShrink>
@@ -40,7 +40,7 @@ export function DefaultItem(props: DefaultItemProps) {
               </Typography>
             </Division>
           </Flex>
-          <Icon name="right-line" size="xl" color="main/label-secondary" />
+          <Icon name="right-line" size={24} color="main/label-secondary" />
         </Flex>
       </Division>
     </TouchableHighlight>

@@ -11,7 +11,7 @@ function BadgeSolid(props: BadgeSolidProps) {
 
   return (
     <Division {...props} style={[styles.container(unistylesProps), props.style]}>
-      {props.icon ? <Icon name={props.icon} color="system/white" size="sm" /> : undefined}
+      {props.icon ? <Icon name={props.icon} color="system/white" size={12} /> : undefined}
       <Typography name="caption2/semibold" color="system/white" numberOfLines={props.numberOfLines}>
         {props.children}
       </Typography>

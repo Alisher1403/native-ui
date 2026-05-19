@@ -4,11 +4,11 @@ export const styles = StyleSheet.create(theme => ({
   row: {
     flexDirection: "row",
     alignItems: "center",
-    gap: theme.spacing.md,
+    gap: 8,
     minHeight: theme.size(52),
-    paddingVertical: theme.spacing.lg,
-    paddingHorizontal: theme.spacing.lg,
-    borderRadius: theme.radius.lg,
+    paddingVertical: 12,
+    paddingHorizontal: 12,
+    borderRadius: 12,
   },
   rowDisabled: {
     opacity: 0.45,
@@ -19,6 +19,6 @@ export const styles = StyleSheet.create(theme => ({
   content: {
     flexDirection: "row",
     alignItems: "center",
-    gap: theme.spacing.md,
+    gap: 8,
   },
 }));

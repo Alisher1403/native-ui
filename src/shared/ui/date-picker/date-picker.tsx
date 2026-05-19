@@ -28,7 +28,7 @@ function DatePicker(props: DatePickerProps) {
         </Typography>
 
         <TouchableOpacity style={styles.clearButton} disabled={!value || disabled} onPress={() => handleClear()}>
-          <Icon name={value ? "close-line" : "calendar-3-line"} size="xl" color="main/label-secondary" />
+          <Icon name={value ? "close-line" : "calendar-3-line"} size={24} color="main/label-secondary" />
         </TouchableOpacity>
       </TouchableOpacity>
 

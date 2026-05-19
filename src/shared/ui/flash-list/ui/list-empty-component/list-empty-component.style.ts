@@ -5,7 +5,7 @@ export const styles = StyleSheet.create(theme => ({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    padding: theme.spacing.md,
+    padding: 8,
   },
   image: {
     height: theme.size(92),

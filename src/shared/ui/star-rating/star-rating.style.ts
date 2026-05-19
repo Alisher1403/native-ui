@@ -15,6 +15,6 @@ export const styles = StyleSheet.create(theme => ({
   starsContainer: {
     flexDirection: "row",
     alignItems: "center",
-    gap: theme.spacing.xl,
+    gap: 16,
   },
 }));

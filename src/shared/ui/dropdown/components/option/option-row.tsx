@@ -20,7 +20,7 @@ function OptionRow({ icon, label, onPress, color = "main/label", disabled }: Dro
     >
       <View style={styles.labelWrap}>
         <View style={styles.content}>
-          <Icon name={icon} size="lg" color={color} />
+          <Icon name={icon} size={20} color={color} />
           <Typography name="callout/regular" color={color}>
             {label}
           </Typography>

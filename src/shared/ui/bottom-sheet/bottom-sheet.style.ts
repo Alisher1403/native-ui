@@ -7,9 +7,9 @@ export const styles = StyleSheet.create(theme => ({
     backgroundColor: theme.colors["system/white"],
   },
   header: {
-    padding: theme.spacing.sm,
-    paddingTop: theme.spacing.sm,
-    paddingHorizontal: theme.spacing.md,
+    padding: 4,
+    paddingTop: 4,
+    paddingHorizontal: 8,
   },
   handle: {
     height: 3,
@@ -21,6 +21,6 @@ export const styles = StyleSheet.create(theme => ({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    marginBottom: theme.spacing.lg,
+    marginBottom: 12,
   },
 }));
