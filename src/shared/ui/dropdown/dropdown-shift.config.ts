@@ -1,0 +1,1 @@
+export const DROPDOWN_BOTTOM_MARGIN = 12;

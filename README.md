@@ -1,97 +1,126 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# NativeUI Components
 
-# Getting Started
+Import components from:
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
-
-## Step 1: Start Metro
-
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
-
-To start the Metro dev server, run the following command from the root of your React Native project:
-
-```sh
-# Using npm
-npm start
-
-# OR using Yarn
-yarn start
+```tsx
+import { Badge, Division, Flex, Icon, Input, Layout, Select } from "@src/shared/ui";
 ```
 
-## Step 2: Build and run your app
+## Layout
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+Use `Layout` as the screen wrapper. It provides ready-to-use header, content, footer, and safe-area helpers.
 
-### Android
+```tsx
+<Layout bg="system/page">
+  <Layout.Header>
+    <Layout.Header.Title>Profile</Layout.Header.Title>
+  </Layout.Header>
 
-```sh
-# Using npm
-npm run android
+  <Layout.Content scrollEnabled px={16} py={12}>
+    <Layout.Header.Height />
+    <Division bg="system/white" p={16} rounded={24}>
+      {/* screen content */}
+    </Division>
+    <Layout.Insets.Bottom />
+  </Layout.Content>
 
-# OR using Yarn
-yarn android
+  <Layout.Footer sticky>
+    {/* bottom actions */}
+  </Layout.Footer>
+</Layout>
 ```
 
-### iOS
+## Icon
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+Use `Icon` to render any registered icon from `icon.config.ts`.
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+```tsx
+<Icon name="search-line" size="xl" color="main/primary" />
 ```
 
-Then, and every time you update your native dependencies, run:
+Common props: `name`, `size`, `color`.
 
-```sh
-bundle exec pod install
+## Select
+
+Use `Select` when the user should choose one value from a bottom sheet list.
+
+```tsx
+<Select
+  label="Country"
+  placeholder="Choose country"
+  value={country}
+  onChange={setCountry}
+  showSearch
+  options={[
+    { value: "uz", label: "Uzbekistan" },
+    { value: "us", label: "United States" },
+  ]}
+/>
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+Common props: `label`, `placeholder`, `value`, `options`, `onChange`, `showSearch`, `error`, `required`.
 
-```sh
-# Using npm
-npm run ios
+## Input
 
-# OR using Yarn
-yarn ios
+Use `Input` for text and masked values such as phone, card, or numeric input.
+
+```tsx
+<Input
+  label="Phone number"
+  type="phone"
+  value={phone}
+  onChange={setPhone}
+  required
+  error={phoneError}
+/>
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+Supported `type` values include: `default`, `phone`, `number`, `float`, `uzs-tiyin`, `card-pan`, `card-expiry`, `year`, `passport-number`, `passport-series`.
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+## Flex
 
-## Step 3: Modify your app
+Use `Flex` for horizontal or vertical layouts with alignment and spacing helpers.
 
-Now that you have successfully run the app, let's make changes!
+```tsx
+<Flex align="center" justify="space-between" gap={12}>
+  <Icon name="user-3-line" />
+  <Division flex />
+  <Badge.Solid color="main/success">Active</Badge.Solid>
+</Flex>
+```
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+Common props: `gap`, `gapX`, `gapY`, `align`, `justify`, `column`, `wrap`, `fullWidth`.
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+## Division
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+Use `Division` as the base block container for spacing, background, radius, and simple visibility control.
 
-## Congratulations! :tada:
+```tsx
+<Division bg="system/white" p={16} rounded={20} mb={12}>
+  {/* content */}
+</Division>
+```
 
-You've successfully run and modified your React Native App. :partying_face:
+Common props: `p`, `px`, `py`, `m`, `mb`, `mt`, `rounded`, `bg`, `bgAlpha`, `flex`, `hidden`.
 
-### Now what?
+## Badge
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+`Badge` has three variants:
 
-# Troubleshooting
+```tsx
+<Badge.Solid color="main/primary" icon="check-line">
+  Verified
+</Badge.Solid>
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+<Badge.Filled color="main/success">
+  Paid
+</Badge.Filled>
 
-# Learn More
+<Badge.Count count={8}>
+  <Icon name="notification-line" />
+</Badge.Count>
+```
 
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+- `Badge.Solid`: filled badge with white text/icon.
+- `Badge.Filled`: light background badge with colored text/icon.
+- `Badge.Count`: counter badge shown on top of another element.
