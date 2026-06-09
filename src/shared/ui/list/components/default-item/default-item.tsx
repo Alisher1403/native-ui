@@ -1,8 +1,8 @@
 import { TouchableHighlight } from 'react-native';
-import { useUnistyles } from 'react-native-unistyles';
 import { Division, Flex, Icon, Typography } from '../../../index';
 import { DivisionProps } from '../../../division/division.types';
 import { IconName } from '../../../icon/icon.types';
+import { styles } from './default-item.style';
 
 type DefaultItemProps = DivisionProps & {
   title?: string;
@@ -12,12 +12,10 @@ type DefaultItemProps = DivisionProps & {
 };
 
 export function DefaultItem(props: DefaultItemProps) {
-  const { theme } = useUnistyles();
-
   return (
     <TouchableHighlight
       onPress={props.onPress}
-      underlayColor={theme.colors['gray/50']}
+      underlayColor={styles.underlay.backgroundColor as string}
     >
       <Division py={8} {...props}>
         <Flex align="center" justify="space-between">

@@ -9,7 +9,6 @@ export const styles = StyleSheet.create(theme => ({
     paddingHorizontal: !props.scrollEnabled ? props.px : undefined,
   }),
   contentContainer: (props: LayoutContentProps) => ({
-    flexGrow: 1,
     paddingVertical: props.py,
     paddingHorizontal: props.px,
   }),
@@ -17,5 +16,8 @@ export const styles = StyleSheet.create(theme => ({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+  },
+  loadingIndicator: {
+    color: theme.colors["main/primary"],
   },
 }));

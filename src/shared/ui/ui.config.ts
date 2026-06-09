@@ -20,5 +20,5 @@ export type UIFontFamilyType = keyof typeof UIFontFamily;
 export type UIIconsType = keyof typeof UIIcons;
 export type BoxModelType = "m" | "mx" | "my" | "mt" | "mb" | "p" | "px" | "py" | "pt" | "pb";
 export type BoxModelSpacing = Record<BoxModelType, UISpacingType>;
-export type UiFontFamilyName = "Inter" | "Unbounded";
+export type UiFontFamilyName = "QuickSand" | "Unbounded";
 export type IconName = keyof typeof Icons;

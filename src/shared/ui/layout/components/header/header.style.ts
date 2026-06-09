@@ -16,4 +16,7 @@ export const styles = StyleSheet.create((theme, rt) => ({
     padding: 8,
     borderRadius: 100,
   },
+  backButtonUnderlay: {
+    backgroundColor: theme.colors["gray/200"],
+  },
 }));

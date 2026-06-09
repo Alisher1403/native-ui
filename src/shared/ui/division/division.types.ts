@@ -1,6 +1,6 @@
-import React from "react";
-import { StyleProp, ViewStyle } from "react-native";
-import { BoxModelSpacing, UIRadiusType, UIThemeType } from "../ui.config";
+import React from 'react';
+import { StyleProp, ViewStyle } from 'react-native';
+import { BoxModelSpacing, UIRadiusType, UIThemeType } from '../ui.config';
 
 export type DivisionProps = Partial<BoxModelSpacing> & {
   children?: React.ReactNode;

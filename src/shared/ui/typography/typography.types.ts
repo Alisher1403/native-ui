@@ -1,4 +1,4 @@
-import { UISpacingType } from "./../ui.config";
+import { UiFontFamilyName, UISpacingType } from "./../ui.config";
 import { StyleProp, TextProps, TextStyle } from "react-native";
 import { UIThemeType } from "../ui.config";
 
@@ -11,7 +11,7 @@ export type TypographyProps = TextProps & {
   mb?: UISpacingType;
   align?: "left" | "center" | "right";
   flex?: boolean;
-  font?: "Inter" | "Unbounded";
+  font?: UiFontFamilyName;
 };
 
 export type TypographyTypes =

@@ -1,15 +1,14 @@
 import { View } from "react-native";
 import { ProgressLinearProps } from "./linear.types"; // can reuse your props
-import { useUnistyles } from "react-native-unistyles";
 import { styles } from "./linear.style";
 import Animated, { clamp, useAnimatedStyle, useDerivedValue, withTiming } from "react-native-reanimated";
 
 export function ProgressLinear(props: ProgressLinearProps) {
-  const { theme } = useUnistyles();
   const animatedValue = useDerivedValue(() => props.value.value);
   styles.useVariants({
     size: props.size || "medium",
   });
+  const progressColor = styles.progressColor({ color: props.progressColor }).color as string;
 
   const progresStyle = useAnimatedStyle(() => {
     const progress = clamp(animatedValue.value, 0, props.max);
@@ -24,7 +23,7 @@ export function ProgressLinear(props: ProgressLinearProps) {
         style={[
           styles.progress,
           progresStyle,
-          { backgroundColor: theme.colors[props.progressColor || "main/primary"] },
+          { backgroundColor: progressColor },
         ]}
       />
     </View>

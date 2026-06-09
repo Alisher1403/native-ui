@@ -62,20 +62,20 @@ Common props: `label`, `placeholder`, `value`, `options`, `onChange`, `showSearc
 
 ## Input
 
-Use `Input` for text and masked values such as phone, card, or numeric input.
+Use compound `Input` components for masked form fields.
 
 ```tsx
-<Input
-  label="Phone number"
-  type="phone"
-  value={phone}
-  onChange={setPhone}
-  required
-  error={phoneError}
-/>
+<Input.Phone label="Phone number" value={phone} onChange={setPhone} />
+<Input.CardPan label="Card number" value={cardPan} onChange={setCardPan} />
+<Input.CardExpiry label="Expiry" value={expiry} onChange={setExpiry} />
+<Input.Number label="Weight" value={weight} suffix="kg" onChange={setWeight} />
+<Input.Float label="Amount" value={amount} suffix="so'm" onChange={setAmount} />
+<Input.UzsTiyin label="Price" value={priceTiyin} suffix="so'm" onChange={setPriceTiyin} />
 ```
 
-Supported `type` values include: `default`, `phone`, `number`, `float`, `uzs-tiyin`, `card-pan`, `card-expiry`, `year`, `passport-number`, `passport-series`.
+Common props: `label`, `value`, `onChange`, `placeholder`, `required`, `error`, `disabled`, `style`, `ref`.
+
+Value behavior: `Phone`, `CardPan`, and `CardExpiry` return strings. `Number` returns number. `Float` returns number while preserving typed decimal text. `UzsTiyin` displays UZS and returns tiyin.
 
 ## Button
 

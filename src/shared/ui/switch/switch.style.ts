@@ -40,4 +40,10 @@ export const styles = StyleSheet.create(theme => ({
     shadowOffset: { width: 0, height: 2 },
     elevation: 2,
   },
+  trackOff: {
+    backgroundColor: theme.colors["gray/200"],
+  },
+  trackOn: {
+    backgroundColor: theme.colors["main/primary"],
+  },
 }));

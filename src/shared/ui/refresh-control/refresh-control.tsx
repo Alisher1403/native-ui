@@ -1,14 +1,13 @@
 import { RefreshControl as RNRefreshControl, RefreshControlProps } from "react-native";
-import { useUnistyles } from "react-native-unistyles";
 import { useModel } from "./refresh-control.model";
+import { styles } from "./refresh-control.style";
 
 export default function RefreshControl(props: RefreshControlProps) {
-  const { theme } = useUnistyles();
   const { isRefreshing, handleRefresh } = useModel(props);
 
   return (
     <RNRefreshControl
-      tintColor={theme.colors["main/primary"]}
+      tintColor={styles.tintColor.color}
       {...props}
       refreshing={isRefreshing}
       onRefresh={handleRefresh}

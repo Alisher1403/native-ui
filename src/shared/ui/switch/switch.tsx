@@ -1,21 +1,21 @@
 import React, { memo, useEffect } from "react";
 import { Pressable, View } from "react-native";
-import { useUnistyles } from "react-native-unistyles";
 import Animated, { interpolateColor, useAnimatedStyle, useSharedValue, withTiming } from "react-native-reanimated";
 import { Typography } from "../index";
 import { styles, SWITCH_TRANSLATE_X } from "./switch.style";
 import type { SwitchProps } from "./switch.types";
 
 function Switch(props: SwitchProps) {
-  const { theme } = useUnistyles();
   const progress = useSharedValue(props.value ? 1 : 0);
+  const trackOff = styles.trackOff.backgroundColor as string;
+  const trackOn = styles.trackOn.backgroundColor as string;
 
   useEffect(() => {
     progress.value = withTiming(props.value ? 1 : 0, { duration: 180 });
   }, [progress, props.value]);
 
   const trackStyle = useAnimatedStyle(() => ({
-    backgroundColor: interpolateColor(progress.value, [0, 1], [theme.colors["gray/200"], theme.colors["main/primary"]]),
+    backgroundColor: interpolateColor(progress.value, [0, 1], [trackOff, trackOn]),
   }));
 
   const thumbStyle = useAnimatedStyle(() => ({

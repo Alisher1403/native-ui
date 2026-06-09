@@ -1,7 +1,6 @@
 import { isLiquidGlassSupported, LiquidGlassView, type LiquidGlassViewProps } from "@callstack/liquid-glass";
 import React from "react";
-import { StyleProp, View, ViewStyle } from "react-native";
-import { useUnistyles } from "react-native-unistyles";
+import { StyleProp, View, ViewStyle, useColorScheme } from "react-native";
 
 export type AppLiquidGlassProps = Omit<LiquidGlassViewProps, "colorScheme" | "effect"> & {
   effect?: "clear" | "regular" | "none";
@@ -18,8 +17,7 @@ export function AppLiquidGlass({
   unsupportedStyle,
   ...props
 }: AppLiquidGlassProps) {
-  const { rt } = useUnistyles();
-  const colorScheme = rt.themeName === "dark" ? "dark" : "light";
+  const colorScheme = useColorScheme() === "dark" ? "dark" : "light";
 
   if (!isLiquidGlassSupported) {
     return (

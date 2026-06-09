@@ -1,44 +1,9 @@
-import { zodResolver } from '@hookform/resolvers/zod';
-import {
-  Button,
-  Division,
-  INPUT_VALID_LENGTH,
-  Input,
-  Layout,
-  Select,
-  Typography,
-  DatePicker,
-} from '@src/shared/ui';
-import { Controller, useForm } from 'react-hook-form';
-import { z } from 'zod';
-
-const schema = z.object({
-  date: z
-    .string()
-    .nullable()
-    .refine(date => date !== null, { message: 'Date is required' }),
-  cardPan: z.string().min(INPUT_VALID_LENGTH.CARD_PAN, 'Card PAN is required'),
-  phone: z.string().min(INPUT_VALID_LENGTH.PHONE, 'Phone number is required'),
-  float: z.number().min(1, 'Float number is required'),
-  select: z.string().min(1, 'Select is required'),
-});
+import { Button, Division, Input, Layout, Select, Typography, DatePicker } from "@src/shared/ui";
+import { Controller } from "react-hook-form";
+import { useModel } from "./component-showcase.model";
 
 export default function ComponentShowcase() {
-  const form = useForm({
-    mode: 'onSubmit',
-    resolver: zodResolver(schema),
-    defaultValues: {
-      date: null,
-      cardPan: '',
-      phone: '',
-      float: 0,
-    },
-  });
-
-  function handleSubmit() {
-    form.trigger();
-    console.log(form.getValues());
-  }
+  const { form, handleSubmit } = useModel();
 
   return (
     <Layout bg="system/page">
@@ -50,80 +15,97 @@ export default function ComponentShowcase() {
         <Layout.Header.Height />
 
         <Division bg="system/white" p={16} rounded={24} mb={8}>
-          <Typography name="title2/semibold" color="main/label" mb={8}>
+          <Typography name="title2/semibold" color="main/label">
             Form
           </Typography>
-          <Controller
-            control={form.control}
-            name="date"
-            render={({ field, fieldState }) => (
-              <DatePicker
-                value={field.value}
-                label="Date of birth"
-                onChange={field.onChange}
-                error={fieldState.error?.message}
-              />
-            )}
-          />
 
-          <Division mb={8} />
-          <Controller
-            control={form.control}
-            name="cardPan"
-            render={({ field, fieldState }) => (
-              <Input
-                value={field.value}
-                type="card-pan"
-                label="Card PAN"
-                onChange={field.onChange}
-                error={fieldState.error?.message}
-              />
-            )}
-          />
-
-          <Division mb={8} />
+          <Division mb={12} />
           <Controller
             control={form.control}
             name="phone"
             render={({ field, fieldState }) => (
-              <Input
+              <Input.Phone
+                required
+                label="Phone Number"
                 value={field.value}
-                type="phone"
-                label="Phone number"
                 onChange={field.onChange}
                 error={fieldState.error?.message}
               />
             )}
           />
 
-          <Division mb={8} />
+          <Division mb={12} />
           <Controller
             control={form.control}
-            name="float"
+            name="cardPan"
             render={({ field, fieldState }) => (
-              <Input
-                value={field.value.toString()}
-                type="float"
-                label="Float number"
+              <Input.CardPan
+                required
+                label="Card Number"
+                value={field.value}
                 onChange={field.onChange}
                 error={fieldState.error?.message}
               />
             )}
           />
 
-          <Division mb={8} />
+          <Division mb={12} />
+          <Controller
+            control={form.control}
+            name="number"
+            render={({ field, fieldState }) => (
+              <Input.Number
+                required
+                label="Number"
+                value={field.value}
+                suffix="kg"
+                onChange={field.onChange}
+                error={fieldState.error?.message}
+              />
+            )}
+          />
+
+          <Division mb={12} />
           <Controller
             control={form.control}
             name="float"
             render={({ field, fieldState }) => (
-              <Select
+              <Input.Float
+                required
+                label="Floating number"
                 value={field.value}
-                label="Select"
-                options={[
-                  { value: '1', label: 'Option 1' },
-                  { value: '2', label: 'Option 2' },
-                  { value: '3', label: 'Option 3' },
-                ]}
+                suffix="tonna"
+                onChange={field.onChange}
+                error={fieldState.error?.message}
+              />
+            )}
+          />
+
+          <Division mb={12} />
+          <Controller
+            control={form.control}
+            name="uzsTiyin"
+            render={({ field, fieldState }) => (
+              <Input.UzsTiyin
+                required
+                label="UZS tiyin"
+                value={field.value}
+                suffix="so'm"
+                onChange={field.onChange}
+                error={fieldState.error?.message}
+              />
+            )}
+          />
+
+          <Division mb={12} />
+          <Controller
+            control={form.control}
+            name="cardExpiry"
+            render={({ field, fieldState }) => (
+              <Input.CardExpiry
+                required
+                label="Card Expiry"
+                value={field.value}
                 onChange={field.onChange}
                 error={fieldState.error?.message}
               />

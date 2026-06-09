@@ -1,0 +1,73 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Quicksand/OFL.txt",
+      "sha1": "a15853b4dcc0b352239e9e367139a43019540565"
+    },
+    {
+      "path": "assets/fonts/Quicksand/Quicksand-VariableFont_wght.ttf",
+      "sha1": "4ee75a4e8cdc8d7cb73c9d37859d5e96da254ecb"
+    },
+    {
+      "path": "assets/fonts/Quicksand/README.txt",
+      "sha1": "272803e2f923ddb7ad88993876e3c67e9c67529b"
+    },
+    {
+      "path": "assets/fonts/Quicksand/static/Quicksand-Bold.ttf",
+      "sha1": "111e880f4de54ccf0a7fd14f38999b9c066e46bb"
+    },
+    {
+      "path": "assets/fonts/Quicksand/static/Quicksand-Light.ttf",
+      "sha1": "4d3b72ff1544d92ca9a435d7e34d21eda322dd76"
+    },
+    {
+      "path": "assets/fonts/Quicksand/static/Quicksand-Medium.ttf",
+      "sha1": "04b8198132a4a092b10d0631500268d6a2a0f889"
+    },
+    {
+      "path": "assets/fonts/Quicksand/static/Quicksand-Regular.ttf",
+      "sha1": "61504eaec812663121918199aac7d960229bd306"
+    },
+    {
+      "path": "assets/fonts/Quicksand/static/Quicksand-SemiBold.ttf",
+      "sha1": "339f8d3e09ad271ff12727eef33a99f7a066eee3"
+    },
+    {
+      "path": "assets/fonts/Unbounded/static/Unbounded-Black.ttf",
+      "sha1": "c2609d8a17d3e4015755f9719c074d1b097382bb"
+    },
+    {
+      "path": "assets/fonts/Unbounded/static/Unbounded-Bold.ttf",
+      "sha1": "bf03723b1ce82b02271ad9994bc55614541cc4da"
+    },
+    {
+      "path": "assets/fonts/Unbounded/static/Unbounded-ExtraBold.ttf",
+      "sha1": "74cbe9d0e4751c62f178751a48b8c888cb4279b9"
+    },
+    {
+      "path": "assets/fonts/Unbounded/static/Unbounded-ExtraLight.ttf",
+      "sha1": "c9a452a5e5abeda0054592fda9743e81f120f4e6"
+    },
+    {
+      "path": "assets/fonts/Unbounded/static/Unbounded-Light.ttf",
+      "sha1": "68d4ca6b415aaf73126b0aa4232150eee93f06c0"
+    },
+    {
+      "path": "assets/fonts/Unbounded/static/Unbounded-Medium.ttf",
+      "sha1": "6eee2b132b3e2a68294e506ed181fdcd37fec108"
+    },
+    {
+      "path": "assets/fonts/Unbounded/static/Unbounded-Regular.ttf",
+      "sha1": "6149891af7e7dbd207323315fcd25a08bd364a8c"
+    },
+    {
+      "path": "assets/fonts/Unbounded/static/Unbounded-SemiBold.ttf",
+      "sha1": "c3adb4281bb42ed8aab996e8a4224538a447828e"
+    },
+    {
+      "path": "assets/fonts/Unbounded/Unbounded-VariableFont_wght.ttf",
+      "sha1": "44df10e5509c94500ec61763ff5af910af06e43c"
+    }
+  ]
+}

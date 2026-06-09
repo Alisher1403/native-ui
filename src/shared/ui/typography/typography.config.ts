@@ -1,8 +1,7 @@
-import { TextStyle } from "react-native";
 import { UIFontFamilyType, UiFontFamilyName } from "../ui.config";
 import type { TypographyTypes, TypographyWeights } from "./typography.types";
 
-const DEFAULT_FONT: UiFontFamilyName = "Inter";
+const DEFAULT_FONT: UiFontFamilyName = "QuickSand";
 const DEFAULT_WEIGHT: TypographyWeights = "regular";
 const FONT_SIZES: Record<TypographyTypes, number> = {
   caption2: 11,
@@ -18,25 +17,19 @@ const FONT_SIZES: Record<TypographyTypes, number> = {
   title1: 28,
   largetitle: 34,
 };
-const FONT_WEIGHTS: Record<TypographyWeights, TextStyle["fontWeight"]> = {
-  regular: 400,
-  medium: 500,
-  semibold: 600,
-  bold: 700,
-};
 
-const FONT_WEIGHT_MAP: Record<string, Record<TypographyWeights, UIFontFamilyType>> = {
-  Inter: {
-    regular: "Inter_400",
-    medium: "Inter_500",
-    semibold: "Inter_600",
-    bold: "Inter_700",
-  },
+const FONT_WEIGHT_MAP: Record<UiFontFamilyName, Record<TypographyWeights, UIFontFamilyType>> = {
   Unbounded: {
     regular: "Unbounded_400",
     medium: "Unbounded_500",
     semibold: "Unbounded_600",
     bold: "Unbounded_700",
+  },
+  QuickSand: {
+    regular: "Quicksand_400",
+    medium: "Quicksand_500",
+    semibold: "Quicksand_600",
+    bold: "Quicksand_700",
   },
 };
 
@@ -49,9 +42,4 @@ export function getFontFamilyKey(font?: UiFontFamilyName, weight?: TypographyWei
 export function getFontSize(name?: TypographyTypes) {
   if (!name) return undefined;
   return FONT_SIZES[name];
-}
-
-export function getFontWeight(weight?: TypographyWeights) {
-  if (!weight) return FONT_WEIGHTS[DEFAULT_WEIGHT];
-  return FONT_WEIGHTS[weight];
 }

@@ -21,4 +21,7 @@ export const styles = StyleSheet.create(theme => ({
       },
     },
   },
+  placeholder: {
+    color: theme.colors["main/label-secondary"],
+  },
 }));

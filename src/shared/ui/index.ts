@@ -6,7 +6,6 @@ export * from "./flex";
 export * from "./pressable-zoom";
 export * from "./layout";
 export * from "./division";
-export * from "./dropdown";
 export * from "./bottom-sheet";
 export * from "./list";
 export * from "./icon";

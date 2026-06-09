@@ -25,4 +25,7 @@ export const styles = StyleSheet.create(theme => ({
     backgroundColor: "red",
     borderRadius: 8,
   },
+  progressColor: (props: { color?: string }) => ({
+    color: theme.colors[(props.color as keyof typeof theme.colors) || "main/primary"],
+  }),
 }));

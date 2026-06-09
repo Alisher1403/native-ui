@@ -1,12 +1,10 @@
 import React from "react";
 import { TextInput, View } from "react-native";
-import { useUnistyles } from "react-native-unistyles";
 import { Typography } from "../index";
 import { TextAreaProps } from "./textarea.types";
 import { styles } from "./textarea.style";
 
 export function TextArea(props: TextAreaProps) {
-  const { theme } = useUnistyles();
   styles.useVariants({
     error: !!props.error,
   });
@@ -25,7 +23,7 @@ export function TextArea(props: TextAreaProps) {
         onChangeText={props.onChange}
         style={styles.input}
         placeholder={props.placeholder}
-        placeholderTextColor={theme.colors["main/label-secondary"]}
+        placeholderTextColor={styles.placeholder.color}
         maxLength={props.maxLength}
         multiline
         textAlignVertical="top"

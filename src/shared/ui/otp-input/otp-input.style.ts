@@ -50,4 +50,14 @@ export const styles = StyleSheet.create(theme => ({
     fontFamily: theme.fontFamily.Inter_500,
     color: theme.colors["main/label"],
   },
+  focusColor: {
+    color: theme.colors["main/primary"],
+    variants: {
+      error: {
+        true: {
+          color: theme.colors["main/error"],
+        },
+      },
+    },
+  },
 }));

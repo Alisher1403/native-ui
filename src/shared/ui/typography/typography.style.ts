@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native-unistyles";
 import type { TypographyProps, TypographyTypes, TypographyWeights } from "./typography.types";
-import { getFontFamilyKey, getFontSize, getFontWeight } from "./typography.config";
+import { getFontFamilyKey, getFontSize } from "./typography.config";
 
 export const styles = StyleSheet.create(theme => ({
   text: (props: TypographyProps) => {
@@ -16,7 +16,6 @@ export const styles = StyleSheet.create(theme => ({
       flexShrink: props.flex ? 1 : undefined,
       flexBasis: props.flex ? "auto" : undefined,
       fontSize: getFontSize(name),
-      fontWeight: getFontWeight(weight),
     };
   },
 }));

@@ -1,12 +1,10 @@
 import { memo } from "react";
 import { View } from "react-native";
 import { OtpInput as RNOtpInput } from "react-native-otp-entry";
-import { useUnistyles } from "react-native-unistyles";
 import { OtpInputProps } from "./otp-input.types";
 import { styles } from "./otp-input.style";
 
 function OtpInput(props: OtpInputProps) {
-  const { theme } = useUnistyles();
   styles.useVariants({
     error: !!props.error,
     disabled: !!props.disabled,
@@ -17,7 +15,7 @@ function OtpInput(props: OtpInputProps) {
       <RNOtpInput
         type="alphanumeric"
         numberOfDigits={props.numberOfDigits || 6}
-        focusColor={props.error ? theme.colors["main/error"] : theme.colors["main/primary"]}
+        focusColor={styles.focusColor.color}
         focusStickBlinkingDuration={500}
         textInputProps={{
           editable: !props.disabled,

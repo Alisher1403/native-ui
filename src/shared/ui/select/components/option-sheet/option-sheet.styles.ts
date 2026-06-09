@@ -20,6 +20,7 @@ export const styles = StyleSheet.create((theme, rt) => ({
   searchContainer: {
     paddingHorizontal: 12,
     justifyContent: "center",
+    backgroundColor: theme.colors["system/white"],
   },
   searchRow: {
     flexDirection: "row",
@@ -30,6 +31,9 @@ export const styles = StyleSheet.create((theme, rt) => ({
     flex: 1,
     color: theme.colors["main/label"],
     paddingVertical: theme.size(14),
+  },
+  searchPlaceholder: {
+    color: theme.colors["main/label-secondary"],
   },
   option: {
     flexDirection: "row",
