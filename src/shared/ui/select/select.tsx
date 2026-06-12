@@ -2,7 +2,8 @@ import { memo } from "react";
 import { View } from "react-native";
 import { SelectProps } from "./select.types";
 import { useModel } from "./select.model";
-import { OptionSheet, SelectHeader } from "./components";
+import { OptionSheet } from "./option-sheet/option-sheet";
+import { SelectHeader } from "./select-header/select-header";
 
 function Select(props: SelectProps) {
   const { onSelect, optionsMap, sheetRef, onClear, handleOpenSheet } = useModel(props);

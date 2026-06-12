@@ -1,4 +1,4 @@
-import IconVariant from "./components/icon-variant";
+import IconVariant from "./icon-variant";
 import { Icons } from "./icon.config";
 import { styles } from "./icon.style";
 import { IconProps } from "./icon.types";

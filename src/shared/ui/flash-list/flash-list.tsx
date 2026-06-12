@@ -1,7 +1,7 @@
 import { FlashList as ShopifyFlashList } from "@shopify/flash-list";
 import { FlashListProps } from "./flash-list.types";
 import { useModel } from "./flash-list.model";
-import { ListEmptyComponent } from "./ui";
+import ListEmptyComponent from "./list-empty-component/list-empty-component";
 import { RefreshControl } from "../index";
 
 export default function FlashList<T>(props: FlashListProps<T>) {

@@ -1,7 +1,7 @@
 import React, { memo, useRef } from "react";
 import { View } from "react-native";
 import { BottomSheetModal } from "@gorhom/bottom-sheet";
-import BackdropComponent from "./components/backdrop";
+import BackdropComponent from "./backdrop";
 import { BottomSheetProps } from "./bottom-sheet.types";
 import { styles } from "./bottom-sheet.style";
 

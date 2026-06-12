@@ -1,5 +1,5 @@
 import { Division } from '../index';
-import { DefaultItem } from './components';
+import { DefaultItem } from "./default-item/default-item";
 import { ListProps } from './list.types';
 
 export default function List(props: ListProps) {

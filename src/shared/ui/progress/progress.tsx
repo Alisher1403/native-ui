@@ -1,4 +1,5 @@
-import { ProgressCircle, ProgressLinear } from "./components";
+import { ProgressCircle } from "./circle/circle";
+import { ProgressLinear } from "./linear/linear";
 
 export default function Progress() {}
 

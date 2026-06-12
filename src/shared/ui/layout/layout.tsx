@@ -1,6 +1,9 @@
 import React from "react";
 import { Division } from "../index";
-import { Insets, LayoutHeader, LayoutContent, LayoutFooter } from "./components";
+import { LayoutContent } from "./content/content";
+import { LayoutFooter } from "./footer/footer";
+import { LayoutHeader } from "./header/header";
+import { Insets } from "./insets/insets";
 import { LayoutProps } from "./layout.types";
 import { styles } from "./layout.style";
 

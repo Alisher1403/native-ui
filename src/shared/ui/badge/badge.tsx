@@ -1,6 +1,6 @@
-import BadgeSolid from "./components/solid/badge-solid";
-import BadgeFilled from "./components/text/badge-text";
-import BadgeCount from "./components/count/badge-count";
+import BadgeCount from "./count/badge-count";
+import BadgeSolid from "./solid/badge-solid";
+import BadgeFilled from "./text/badge-text";
 
 const Badge = {
   Solid: BadgeSolid,
