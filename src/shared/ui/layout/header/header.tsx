@@ -26,6 +26,7 @@ export const LayoutHeader = ((props: LayoutHeaderProps) => {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerTransparent: true,
+      headerShown: true,
       header: () => {
         return (
           <ProgressiveBlurView blurAmount={5}>

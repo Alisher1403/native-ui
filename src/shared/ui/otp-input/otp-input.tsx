@@ -1,41 +1,55 @@
-import { memo } from "react";
-import { View } from "react-native";
-import { OtpInput as RNOtpInput } from "react-native-otp-entry";
-import { OtpInputProps } from "./otp-input.types";
+import { Pressable, Text, TextInput, View } from "react-native";
+import { useModel } from "./otp-input.model";
 import { styles } from "./otp-input.style";
+import type { OtpInputProps } from "./otp-input.types";
 
-function OtpInput(props: OtpInputProps) {
+export function OtpInput(props: OtpInputProps) {
+  const { value } = props;
+  const { activeIndex, length, ...model } = useModel(props);
   styles.useVariants({
-    error: !!props.error,
     disabled: !!props.disabled,
+    error: !!props.error,
+    isFocused: model.isFocused,
   });
 
   return (
     <View style={props.style}>
-      <RNOtpInput
-        type="alphanumeric"
-        numberOfDigits={props.numberOfDigits || 6}
-        focusColor={styles.focusColor.color}
-        focusStickBlinkingDuration={500}
-        textInputProps={{
-          editable: !props.disabled,
-          autoComplete: "one-time-code",
-          textContentType: "oneTimeCode",
-        }}
-        secureTextEntry={props.secureTextEntry}
-        onFilled={props.onFilled}
-        onTextChange={props.onChange}
+      <Pressable
+        accessibilityLabel={`One-time password, ${length} digits`}
+        accessibilityRole="button"
         disabled={props.disabled}
-        theme={{
-          containerStyle: styles.container,
-          pinCodeContainerStyle: styles.cell,
-          pinCodeTextStyle: styles.cellText,
-          focusedPinCodeContainerStyle: styles.cellFocused,
-          filledPinCodeContainerStyle: styles.cellFilled,
-        }}
+        onPress={model.focusInput}
+        style={styles.boxRow}
+      >
+        {Array.from({ length }, (_, index) => {
+          const isActive = index === activeIndex && model.isFocused && !props.disabled;
+          return (
+            <View key={index} style={[styles.box, isActive && styles.activeBox]}>
+              <Text style={styles.digit}>{value[index] ?? ""}</Text>
+            </View>
+          );
+        })}
+      </Pressable>
+
+      <TextInput
+        ref={model.inputRef}
+        autoComplete="one-time-code"
+        autoFocus={props.autoFocus && !props.disabled}
+        caretHidden
+        editable={!props.disabled}
+        keyboardType={props.keyboardType ?? "number-pad"}
+        maxLength={length}
+        onBlur={model.handleBlur}
+        onChangeText={model.handleChange}
+        onFocus={model.handleFocus}
+        style={styles.hiddenInput}
+        textContentType="oneTimeCode"
+        value={value}
       />
+
+      {props.error ? <Text style={styles.errorText}>{props.error}</Text> : null}
     </View>
   );
 }
 
-export default memo(OtpInput);
+export default OtpInput;

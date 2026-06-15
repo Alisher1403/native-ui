@@ -14,6 +14,7 @@ export function useModel() {
       number: 0,
       uzsTiyin: 0,
       cardExpiry: "",
+      otp: "",
     },
   });
 

@@ -14,8 +14,10 @@ export const styles = StyleSheet.create(theme => ({
     paddingTop: props.pt,
     paddingBottom: props.pb,
     borderRadius: props.rounded,
-    backgroundColor: props.bg && theme.alpha(theme.colors[props.bg], props.bgAlpha),
+    backgroundColor: theme.alpha(props.bg ? theme.colors[props.bg] : props.backgroundColor, props.bgAlpha),
     flex: props.flex ? 1 : undefined,
     flexShrink: props.flexShrink ? 1 : undefined,
+    height: props.height && theme.size(props.height),
+    width: props.width && theme.size(props.width),
   }),
 }));

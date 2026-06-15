@@ -1,37 +1,37 @@
 import React, { memo } from "react";
 import { Pressable } from "react-native";
-import Animated, { WithSpringConfig, useAnimatedStyle, useSharedValue, withSpring } from "react-native-reanimated";
+import Animated, { useAnimatedStyle, useSharedValue, withSpring } from "react-native-reanimated";
 import type { PressableZoomProps } from "./pressable-zoom.types";
 
-/** Scale while finger is down (press-in feedback). */
-const PRESS_SCALE = 0.85;
+const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
-const SPRING: WithSpringConfig = {
-  duration: 400,
-};
-
-function PressableZoom({ onPress, onLongPress, style, children, ...pressableRest }: PressableZoomProps) {
-  const scale = useSharedValue(1);
+function PressableZoom(props: PressableZoomProps) {
+  const { onPress, onLongPress, style, children, scale: pressScale = 1, duration = 200, ...pressableProps } = props;
+  const zoomScale = useSharedValue(1);
 
   const animatedStyle = useAnimatedStyle(() => ({
-    transform: [{ scale: scale.value }],
+    transform: [{ scale: zoomScale.value }],
   }));
 
+  function handlePressIn() {
+    zoomScale.value = withSpring(pressScale, { duration });
+  }
+
+  function handlePressOut() {
+    zoomScale.value = withSpring(1, { duration });
+  }
+
   return (
-    <Pressable
-      {...pressableRest}
-      style={style}
+    <AnimatedPressable
+      {...pressableProps}
       onPress={onPress}
-      onPressIn={() => {
-        scale.value = withSpring(PRESS_SCALE, SPRING);
-      }}
-      onPressOut={() => {
-        scale.value = withSpring(1, SPRING);
-      }}
+      onPressIn={handlePressIn}
+      onPressOut={handlePressOut}
       onLongPress={onLongPress}
+      style={[style, animatedStyle]}
     >
-      <Animated.View style={animatedStyle}>{children}</Animated.View>
-    </Pressable>
+      {children}
+    </AnimatedPressable>
   );
 }
 

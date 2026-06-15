@@ -13,11 +13,11 @@ type LayoutFooterProps = DivisionProps & {
 export function LayoutFooter(props: LayoutFooterProps) {
   const insets = useSafeAreaInsets();
 
-  if (!props.sticky) return <Division p={8} bg="system/white" {...props} />;
+  if (!props.sticky) return <Division p={8} bg="transparent" {...props} />;
 
   return (
     <KeyboardStickyView offset={{ opened: 0, closed: -insets.bottom }}>
-      <Division p={8} bg="system/white" {...props} />
+      <Division p={8} bg="transparent" {...props} />
     </KeyboardStickyView>
   );
 }

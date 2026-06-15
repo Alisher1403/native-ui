@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native-unistyles";
 
 export const styles = StyleSheet.create((theme, rt) => ({
   container: {
-    padding: 8,
+    padding: 12,
     paddingVertical: 8,
     paddingTop: 8 + rt.insets.top,
     paddingRight: 16,

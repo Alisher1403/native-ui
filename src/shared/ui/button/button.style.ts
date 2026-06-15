@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native-unistyles";
 
 export const styles = StyleSheet.create(theme => ({
   container: {
-    borderRadius: 30,
+    borderRadius: 20,
     overflow: "hidden",
     backgroundColor: theme.colors["gray/100"],
     minHeight: 48,

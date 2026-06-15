@@ -13,4 +13,5 @@ export const schema = z.object({
   uzsTiyin: z.number().min(1, "UZS tiyin is required"),
   cardExpiry: z.string().min(4, "Card expiry is required"),
   select: z.string().min(1, "Select is required"),
+  otp: z.string().min(6, "OTP is required"),
 });

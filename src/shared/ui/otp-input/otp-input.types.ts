@@ -1,13 +1,13 @@
-import { ViewStyle } from "react-native";
+import type { KeyboardTypeOptions, StyleProp, ViewStyle } from "react-native";
 
 export type OtpInputProps = {
-  value?: string;
-  onFilled?(value: string): void;
-  onChange?(value: string): void;
-  numberOfDigits?: number;
+  value: string;
+  length?: number;
+  keyboardType?: KeyboardTypeOptions;
   disabled?: boolean;
   error?: string;
   autoFocus?: boolean;
-  secureTextEntry?: boolean;
-  style?: ViewStyle;
+  onChange?: (value: string) => void;
+  onComplete?: (value: string) => void;
+  style?: StyleProp<ViewStyle>;
 };

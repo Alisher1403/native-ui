@@ -1,4 +1,4 @@
-import { Button, Division, Input, Layout, Select, Typography, DatePicker } from "@src/shared/ui";
+import { Button, Division, Input, Layout, Typography, OtpInput } from "@src/shared/ui";
 import { Controller } from "react-hook-form";
 import { useModel } from "./component-showcase.model";
 
@@ -110,6 +110,13 @@ export default function ComponentShowcase() {
                 error={fieldState.error?.message}
               />
             )}
+          />
+
+          <Division mb={24} />
+          <Controller
+            control={form.control}
+            name="otp"
+            render={({ field }) => <OtpInput value={field.value} onChange={field.onChange} length={6} />}
           />
         </Division>
 

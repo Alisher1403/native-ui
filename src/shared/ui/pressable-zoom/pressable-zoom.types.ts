@@ -9,4 +9,6 @@ export type PressableZoomProps = Omit<
   onLongPress?: PressableProps["onLongPress"];
   style?: StyleProp<ViewStyle>;
   children: ReactNode;
+  scale?: number;
+  duration?: number;
 };
